@@ -13,4 +13,35 @@
 
 %br
 
+
 = link_to '新規レポート作成', new_report_path
+%br
+%br
+
+%hr
+
+%h2 API説明
+%br
+一覧取得(過去30日間)
+%br
+= link_to "http://tatami.herokuapp.com/reports.json", "http://tatami.herokuapp.com/reports.json"
+%br
+%br
+
+一覧取得(日付指定)
+%br
+例)過去7日間
+%br
+= link_to "http://tatami.herokuapp.com/reports/days/7.json", "http://tatami.herokuapp.com/reports/days/7.json"
+%br
+%br
+
+jsonデータ
+%br
+photo_url: 画像のURL
+%br
+created_at: アップロード時間(TODO: 正しくは画像からメタ情報を読んだ方が良いと思う)
+%br
+%br
+%br
+
