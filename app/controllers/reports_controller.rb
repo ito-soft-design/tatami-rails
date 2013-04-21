@@ -41,7 +41,11 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
-    @report = Report.new(params[:report])
+    report = params[:report].dup
+    report[:photo] ||= params[:report_photo]
+p report
+    @report = Report.new(report)
+p "*" * 80, params, params[:report_photo], @report, @report.photo
 
     respond_to do |format|
       if @report.save
