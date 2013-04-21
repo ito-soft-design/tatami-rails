@@ -1,9 +1,14 @@
+%h1 レポート詳細
 %p#notice= notice
 
 %p
-  %b Description:
+= image_tag(@report.photo.url(:medium)) 
+%p
+= link_to 'オリジナル', @report.photo.url 
+%p
+  %b 説明:
   = @report.description
 
-= link_to 'Edit', edit_report_path(@report)
+= link_to '編集', edit_report_path(@report)
 \|
-= link_to 'Back', reports_path
+= link_to '一覧', reports_path

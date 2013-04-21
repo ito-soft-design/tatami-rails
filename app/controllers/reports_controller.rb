@@ -43,9 +43,7 @@ class ReportsController < ApplicationController
   def create
     report = params[:report].dup
     report[:photo] ||= params[:report_photo]
-p report
     @report = Report.new(report)
-p "*" * 80, params, params[:report_photo], @report, @report.photo
 
     respond_to do |format|
       if @report.save

@@ -1,5 +1,5 @@
 .div{ align:"center"}
-  =image_tag(report.photo.url(:thumb))
+  = link_to image_tag(report.photo.url(:thumb)), report_path(report)
   %br
   = report.created_at.to_date
   %br
