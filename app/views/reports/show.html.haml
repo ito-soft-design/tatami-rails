@@ -8,6 +8,12 @@
 %p
   %b 説明:
   = @report.description
+- if @report.latitude
+  %p
+    %b 位置:
+    緯度:#{@report.latitude} 経度:#{@report.longitude}
+    %br
+    %a{ href:"https://maps.google.com/maps?q=#{@report.latitude},#{@report.longitude}&hl=ja&sll=#{@report.latitude},#{@report.longitude}&sspn=0.035103,0.060511&t=m&z=16", target:"_blank"} 地図で見る
 
 = link_to '編集', edit_report_path(@report)
 \|

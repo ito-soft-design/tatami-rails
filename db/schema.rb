@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420235810) do
+ActiveRecord::Schema.define(:version => 20130421140230) do
 
   create_table "reports", :force => true do |t|
     t.text     "description"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130420235810) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
