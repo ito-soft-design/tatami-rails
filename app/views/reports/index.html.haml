@@ -1,0 +1,16 @@
+%h1 レポート一覧
+
+%table
+  - @reports.each_slice(8) do |reports|
+    %tr
+      - reports.each do |report|
+        %td= render partial:"thumb_cell", locals: { report:report }
+        
+        !!! %td= report.description
+        !!! %td= link_to 'Show', report
+        !!! %td= link_to 'Edit', edit_report_path(report)
+        !!! %td= link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to '新規レポート作成', new_report_path

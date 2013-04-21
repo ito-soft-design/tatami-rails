@@ -1,0 +1,6 @@
+.div{ align:"center"}
+  =image_tag(report.photo.url(:thumb))
+  %br
+  = report.created_at.to_date
+  %br
+  = report.created_at.strftime("%H:%M")
