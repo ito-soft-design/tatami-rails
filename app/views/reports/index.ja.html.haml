@@ -1,0 +1,39 @@
+%h1 畳
+%hr
+%p
+  このサイトはiOSアプリ「写真手裏剣」で画像のアップロードを確認するためのサンプルサイトです。Ruby On Railsを使って作成しています。アップロードされた画像は全て公開されますので、プライベートに関する写真のアップロードはしないで下さい。また、全てのアップロードの最新の100件までしか表示されません。また、一定時間(1日程度)を経過すると削除されます。
+%p
+  写真をアップロードするには写真手裏剣に最初から含まれている"Railsのサンプル"を選択して下さい。
+%p
+  ソースコードは#{link_to "TODO:後で公開"}で見る事が出来ます。あなたのサイトに「写真手裏剣」で写真をアップロードする時の参考にして下さい。
+%br
+  もっと#{link_to "単純なSinatra(Ruby)を使ったサンプルサイト", "http://tatami-ex.herokuapp.com"}もありますので、そちらもご覧下さい。
+  
+%br
+  写真手裏剣で、このサイト向けに設定する方法についてはこのページ下部の'新規レポート作成'を押して下さい。
+
+%hr
+%h1 レポート一覧
+%p
+  アップロードされた写真の一覧です。
+  
+%table
+  - @reports.each_slice(8) do |reports|
+    %tr
+      - reports.each do |report|
+        %td= render partial:"thumb_cell", locals: { report:report }
+        
+        !!! %td= report.description
+        !!! %td= link_to 'Show', report
+        !!! %td= link_to 'Edit', edit_report_path(report)
+        !!! %td= link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+
+= link_to '新規レポート作成', new_report_path
+%br
+%br
+
+%hr
+
