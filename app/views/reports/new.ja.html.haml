@@ -1,4 +1,4 @@
-%h1 写真を追加
+%h1 レポートを追加
 
 = render 'form'
 
@@ -10,7 +10,7 @@
   フォト手裏剣で、このページのフォームに合わせてアップロードする様にするには次の様に設定します。
 
 %p
-  フォームタグから抜粋するとこのページは次の様な記述になっています。
+  formタグを抜粋するとこのページは次の様な記述になっています。
 %code
   &lt;form accept-charset=&quot;UTF-8&quot; action=&quot;/reports&quot; class=&quot;new_report&quot; enctype=&quot;multipart/form-data&quot; id=&quot;new_report&quot; method=&quot;post&quot;&gt;
   %br
@@ -25,7 +25,7 @@
   %br
 
 %p
-  まずはタイトルに 畳 と設定します。
+  まずはタイトルにどのサイトの設定か分る様に 畳 と設定します。
   %br
 
 %p
@@ -33,7 +33,7 @@
   %br
   action="/reports"とあるので、この場合は http://tatami.herokuapp.com/reports になります。
   %br
-  method="POST"とあるので、メソッドにPOSTを設定します。
+  method="post"とあるので、メソッドにPOSTを設定します。
   %br
 
 %p
@@ -47,7 +47,7 @@
 %p
   説明も書込める様にInputタグの設定(Name,Value)の新規設定で追加します。
   %br
-  InputタグのName属性に report[description] と入力します。
+  InputタグのName属性にtextareaタグのnameを見て report[description] と入力します。
   %br
   編集可能をオンにする事で説明を入力してアップロード出来る様になります。
   %br
