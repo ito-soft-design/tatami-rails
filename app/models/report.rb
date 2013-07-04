@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  attr_accessible :description, :latitude, :longitude
+  attr_accessible :description, :latitude, :longitude, :created_at
   attr_accessible :photo
 
   default_scope order("created_at desc")

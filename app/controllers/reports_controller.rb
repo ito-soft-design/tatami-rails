@@ -41,7 +41,7 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     report = params[:report].dup
-    report[:photo] ||= params[:report_photo]
+    report[:created_at] ||= params["__IMAGE_TIMESTAMP__"]
     @report = Report.new(report)
 
     respond_to do |format|
