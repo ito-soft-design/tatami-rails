@@ -2,7 +2,7 @@
 
 = render 'form'
 
-= link_to 'Back', reports_path
+= link_to '戻る', reports_path
 
 %hr
 %h1 写真手裏剣での設定方法
@@ -30,32 +30,29 @@
 
 %p
   formタグからアップロードするurlを確認します。
-  %b
-  この場合は http://tatami.herokuapp.com/reports になります。
-  %b
-  メソッドも確認して、POSTを設定します。
+  %br
+  action="/reports"とあるので、この場合は http://tatami.herokuapp.com/reports になります。
+  %br
+  method="POST"とあるので、メソッドにPOSTを設定します。
   %br
 
 %p
-  続いてはinputタグのfileタイプのnameを見ます。Hashの様になっている場合は . で接続します。
-  %br
-  report[photo] -> report.photo
+  続いてはinputタグのfileタイプのnameを見ます。この値 report[photo] を画像のフィールド名に設定します。
   %br
   %br
-  %br
-  #{image_tag "settings_rails_file.jpg"}
+  #{image_tag "settings_rails_file.png"}
   %br
   %br
 
 %p
   説明も書込める様にInputタグの設定(Name,Value)の新規設定で追加します。
   %br
-  InputタグのName属性に report.description と入力します。
+  InputタグのName属性に report[description] と入力します。
   %br
-  これで説明を付加してアップロード出来る様になります。
+  編集可能をオンにする事で説明を入力してアップロード出来る様になります。
   %br
   %br
-  #{image_tag "settings_rails_description.jpg"}
+  #{image_tag "settings_rails_description.png"}
   %br
   %br
   
