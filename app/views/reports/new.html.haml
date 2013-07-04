@@ -1,5 +1,64 @@
-%h1 新規レポート
+%h1 Add a picture
 
 = render 'form'
 
 = link_to 'Back', reports_path
+
+%hr
+%h1 How to set up a photo shuriken
+%p
+  In the Photo Shuriken, set as follows To like to upload according to the form on this page.
+
+%p
+  This page has the description, such as the following: When you extract from the form tag.
+%code
+  &lt;form accept-charset=&quot;UTF-8&quot; action=&quot;/reports&quot; class=&quot;new_report&quot; enctype=&quot;multipart/form-data&quot; id=&quot;new_report&quot; method=&quot;post&quot;&gt;
+  %br
+  &lt;input id=&quot;report_photo&quot; name=&quot;report[photo]&quot; type=&quot;file&quot;&gt;
+  %br
+  &lt;textarea cols=&quot;60&quot; id=&quot;report_description&quot; name=&quot;report[description]&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;
+  %br
+  &lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;保存&quot;&gt;
+  %br
+  &lt;/form&gt;
+  %br
+  %br
+
+%p
+  First I set the Tatami in the title.
+  %br
+
+%p
+  I'll make sure the url you want to upload from the form tag. 
+  %br
+  Because it is with action = "/ reports", you will http://tatami.herokuapp.com/reports in this case.
+  %br
+  Because it is with method = "POST", and set the method to POST. 
+  %br
+
+%p
+  Look at the name of the file type of the input tag is followed. I set to the field name for the image report[photo]. 
+
+  %br
+  %br
+  #{image_tag "settings_rails_file.png"}
+  %br
+  %br
+
+%p
+  I will add a new setting (Name, Value) of setting, set Description to the human-readable name.. 
+  %br
+  I will put report[description] in the Name attribute of the Input tag. 
+  %br
+  It will be like can be uploaded by entering the description by turning on the editable.
+  %br
+  %br
+  #{image_tag "settings_rails_description.png"}
+  %br
+  %br
+  
+%p
+  Is not included in this page, but in fact this form you can be added also taken time and position information. 
+  %br
+  Configuration example have a look at the "Sample of Rails" are included from the beginning in the photo shuriken. 
+  %br

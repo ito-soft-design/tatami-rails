@@ -1,5 +1,22 @@
-%h1 レポート一覧
+%h1 Tatami
+%hr
+%p
+  This site is a sample site to confirm the upload of image iOS app with "Picture Shuriken". We were created using Ruby On Rails. Images that have been uploaded so exposes all, please do not Upload a photo about the private. In addition, up to 100 most recent upload of all displays only. In addition, it will be deleted when you passed (about one day) period of time.
+%p
+  Select the "Sample of Rails" are included from the beginning in the Picture Shurikens to upload photos.
+%p
+  Source code TODO: publish later you can see in the. Please refer to it when you upload the photo in the "Picture Shuriken" to your site.
+%br
+  More sample site #{link_to "using the (Ruby) simple Sinatra", "http://tatami-ex.herokuapp.com"} because there is, please look also there.
+  
+%br
+  Press the 'Create new report' at the bottom of the page for information on how to dart in the picture and set it to this site for. 
 
+%hr
+%h1 Report List
+%p
+  Here is a list of photos that have been uploaded.
+  
 %table
   - @reports.each_slice(8) do |reports|
     %tr
@@ -14,34 +31,6 @@
 %br
 
 
-= link_to '新規レポート作成', new_report_path
+= link_to 'Create new report', new_report_path
 %br
 %br
-
-%hr
-
-%h2 API説明
-%br
-一覧取得(過去30日間)
-%br
-= link_to "http://tatami.herokuapp.com/reports.json", "http://tatami.herokuapp.com/reports.json"
-%br
-%br
-
-一覧取得(日付指定)
-%br
-例)過去7日間
-%br
-= link_to "http://tatami.herokuapp.com/reports/days/7.json", "http://tatami.herokuapp.com/reports/days/7.json"
-%br
-%br
-
-jsonデータ
-%br
-photo_url: 画像のURL
-%br
-created_at: アップロード時間(TODO: 正しくは画像からメタ情報を読んだ方が良いと思う)
-%br
-%br
-%br
-
