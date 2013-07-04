@@ -2,7 +2,7 @@ Tatami::Application.routes.draw do
 
   match 'reports/days/:days' => 'reports#index'
   
-  resources :reports
+  resources :reports , :only => [:index, :new, :create, :show]
 
 
   # The priority is based upon order of creation:
