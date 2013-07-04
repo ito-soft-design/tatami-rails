@@ -20,6 +20,15 @@ class Report < ActiveRecord::Base
     medium: '300x300>'
   }
   
+  class << self
+  
+    def clean_past_at t = nil
+      t ||= Time.now - 1.day
+      self.where("created_at < ?", t).delete_all
+    end
+
+  end
+  
   def photo_url
     photo_url_for_style nil
   end
