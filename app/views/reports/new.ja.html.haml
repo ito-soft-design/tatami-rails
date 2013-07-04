@@ -21,23 +21,30 @@
   &lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;保存&quot;&gt;
   %br
   &lt;/form&gt;
+  %br
+  %br
 
 %p
   まずはタイトルに 畳 と設定します。
+  %br
+
 %p
   formタグからアップロードするurlを確認します。
   %b
   この場合は http://tatami.herokuapp.com/reports になります。
   %b
   メソッドも確認して、POSTを設定します。
-  
+  %br
+
 %p
   続いてはinputタグのfileタイプのnameを見ます。Hashの様になっている場合は . で接続します。
   %br
   report[photo] -> report.photo
   %br
   %br
+  %br
   #{image_tag "settings_rails_file.jpg"}
+  %br
   %br
 
 %p
@@ -47,10 +54,13 @@
   %br
   これで説明を付加してアップロード出来る様になります。
   %br
+  %br
   #{image_tag "settings_rails_description.jpg"}
+  %br
   %br
   
 %p
   このページには含まれてませんが、このフォームでは実は位置情報や撮影時刻も付加する事が出来ます。
   %br
   設定例は写真手裏剣に最初から含まれている"Railsのサンプル"をご覧下さい。
+  %br
