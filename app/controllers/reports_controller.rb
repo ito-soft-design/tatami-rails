@@ -2,8 +2,7 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    days = params["days"] ? params["days"].to_i : 30
-    @reports = Report.in_days(days)
+    @reports = Report.all(:limit => 100)
 
     respond_to do |format|
       format.html # index.html.erb
