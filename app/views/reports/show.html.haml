@@ -7,7 +7,7 @@
 = link_to 'Original', @report.photo.url 
 %p
   %b Description:
-  = @report.description
+  = simple_format @report.description
 - if @report.latitude
   %p
     %b Location:

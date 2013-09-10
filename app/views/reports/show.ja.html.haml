@@ -7,7 +7,7 @@
 = link_to 'オリジナル', @report.photo.url 
 %p
   %b 説明:
-  = @report.description
+  = simple_format @report.description
 - if @report.latitude
   %p
     %b 位置:
